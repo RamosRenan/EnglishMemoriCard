@@ -1,0 +1,24 @@
+.example-spacer 
+{
+    flex: 1 1 auto;
+}
+
+.mat-toolbar
+{
+    background-color: #626bba;
+    position: absolute;
+    bottom: 0px;
+}
+
+.mat-icon, button
+{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.mat-icon:hover
+{
+   font-size: 17px;
+}
+

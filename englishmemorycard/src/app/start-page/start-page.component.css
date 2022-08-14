@@ -1,0 +1,56 @@
+.start-page-works
+{
+    width: 99.99vw;
+    height: 99vh;
+    background-color: #b2d3be;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button
+{
+    margin: 5px;
+}
+
+.wrap-content-start-page
+{
+    width: auto;
+    height: auto;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    /* background-color: #ffffff; */
+}
+
+.wrap-content-start-page > h1
+{
+    margin: auto;
+    /* background-color: #3f3f3f; */
+    text-align: center;
+    font: bold 50px arial, sans-serif;
+    background-color: #565656;
+    color: transparent;
+    text-shadow: 2px 2px 3px rgba(255,255,255,0.5);
+    -webkit-background-clip: text;
+       -moz-background-clip: text;
+            background-clip: text;
+ }
+
+ .example-button-row
+ {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+ }
+
+ img{
+    margin: auto;
+    /* background-color: #565656; */
+ }
+
+ .wrap-img-start-page{
+    width: 200px;
+    height: 200px;
+    margin: auto;
+ }
