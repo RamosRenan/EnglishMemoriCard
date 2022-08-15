@@ -11,6 +11,7 @@ import {MatIconModule} from "@angular/material/icon";
  import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { StartPageComponent } from './start-page/start-page.component';
 import {MatButtonModule} from '@angular/material/button';
+import { RegistryWordComponent } from './registry-word/registry-word.component';
 
 
 @NgModule({
@@ -20,6 +21,7 @@ import {MatButtonModule} from '@angular/material/button';
     FooterComponent,
      PageNotFoundComponent,
      StartPageComponent,
+     RegistryWordComponent,
    ],
   imports: [
     BrowserModule,
