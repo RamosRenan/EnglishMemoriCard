@@ -1,1 +1,54 @@
-<p>registry-word works!</p>
+<form class="example-form">
+<div class="registry-word">
+        <div class="registry-word-wrap-content">
+            <div class="title">
+                <h1>Vincular imagem</h1>
+            </div>
+
+            <div class="cards">
+                <mat-card>Simple card</mat-card>
+                <mat-card>Simple card</mat-card>
+            </div>
+
+            <div class="check-me">
+                <section class="example-section">
+                    <mat-checkbox class="example-margin" ><span style="color: rgb(151, 25, 52);">! Important</span></mat-checkbox>
+
+                </section>
+            </div>
+            
+            <hr>
+
+            <div class="title">
+                <h1>Cadastrar palavra</h1>
+            </div>
+
+            <div class="form-word">
+                <label for=""></label>
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>english word</mat-label>
+                    <input matInput placeholder="english" value="english" type="text" name="en" [formControl]="formWordEn">
+                </mat-form-field>
+
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>português</mat-label>
+                    <input matInput placeholder="Ex. Pizza" value="português">
+                </mat-form-field>
+                
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Comments</mat-label>
+                    <textarea matInput placeholder="Comentário"></textarea>
+                </mat-form-field>
+
+                <div class="start-page-buttons">
+                    <div class="example-button-row">
+                        <div class="page-buttons"><button mat-raised-button color="primary"> Cadastrar </button></div>
+                    </div>
+                </div>
+            </div><!-- form-word -->
+            <br>
+            <br>
+        </div> <!-- registry-word-wrap-content -->
+    </div>
+    
+</form>

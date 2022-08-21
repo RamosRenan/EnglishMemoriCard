@@ -12,6 +12,12 @@ import {MatIconModule} from "@angular/material/icon";
 import { StartPageComponent } from './start-page/start-page.component';
 import {MatButtonModule} from '@angular/material/button';
 import { RegistryWordComponent } from './registry-word/registry-word.component';
+import {MatCardModule} from '@angular/material/card';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatInputModule} from '@angular/material/input';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 
 
 @NgModule({
@@ -22,7 +28,7 @@ import { RegistryWordComponent } from './registry-word/registry-word.component';
      PageNotFoundComponent,
      StartPageComponent,
      RegistryWordComponent,
-   ],
+    ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -30,7 +36,13 @@ import { RegistryWordComponent } from './registry-word/registry-word.component';
     MatToolbarModule,
     MatIconModule,
     MatButtonModule,
-  ],
+    MatCardModule,
+    MatCheckboxModule,
+    MatInputModule,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
+   ],
   providers: [],
   bootstrap: [AppComponent]
 })
