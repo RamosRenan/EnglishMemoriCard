@@ -1,19 +1,54 @@
-<form class="example-form">
-<div class="registry-word">
+<form class="example-form" [formGroup]="formRegistryWords" (ngSubmit)="processForm()">
+    <div class="registry-word" formGroupName="groupForm1">
         <div class="registry-word-wrap-content">
             <div class="title">
                 <h1>Vincular imagem</h1>
             </div>
 
+            <!-- card reponsavel por apresentar imagem e as palavras -->
             <div class="cards">
-                <mat-card>Simple card</mat-card>
-                <mat-card>Simple card</mat-card>
+                <!-- # form imagem selecionada pelo usuario -->
+                <mat-card>
+                    <img src="{{url}}" alt="" width="180" height="180">
+                </mat-card>
+                
+                <!-- palavras cadastradas pelo usuario, inglex e portugues -->
+                <mat-card>
+                    <p style="color: black;"> <strong>En</strong> </p>
+                    <div style=" overflow-y: scroll; height: 40px;">
+                        <span style="color: black;" >
+                            <p>
+                                <span *ngFor="let item of en_words; index as i;"> <strong> {{i}}. </strong> {{item}}; </span>
+                            </p>
+                        </span>
+                    </div>
+
+                    <hr>
+
+                    <p style="color: black;"> <strong>Pt-br</strong> </p>
+                    <div style=" overflow-y: scroll; height: 40px;">
+                        <span style="color: black;" >
+                            <p>
+                                <span *ngFor="let item of pt_br_words; index as i;"> <strong> {{i}}. </strong> {{item}}; </span>
+                            </p>
+                        </span>
+                    </div>
+                </mat-card>
             </div>
 
+            <!-- # name: utl_img, permite o usuario informar utl da imagem -->
+            <div class="check-me">
+                <div class="cards">
+                    <mat-card class="cards-imput">
+                        <input formControlName="utl_img" placeholder="Url img, Ex.: https://dynamic-media-cdn.tripadvisor.com/media/photo-o" type="text" name="urlImg" style="border : none; outline: none;">
+                    </mat-card>
+                </div>
+            </div>
+
+            <!-- # name:important, permite ao usuario informar se e palavra é importante para ele -->
             <div class="check-me">
                 <section class="example-section">
-                    <mat-checkbox class="example-margin" ><span style="color: rgb(151, 25, 52);">! Important</span></mat-checkbox>
-
+                    <mat-checkbox  formControlName="important" class="example-margin" name="important" id="important" ><span style="color: rgb(151, 25, 52);"> Important !</span></mat-checkbox>
                 </section>
             </div>
             
@@ -25,30 +60,35 @@
 
             <div class="form-word">
                 <label for=""></label>
+                <!-- # name: en_word, informa as palavras em ingles -->
                 <mat-form-field class="example-full-width" appearance="fill">
                     <mat-label>english word</mat-label>
-                    <input matInput placeholder="english" value="english" type="text" name="en" [formControl]="formWordEn">
+                    <input  formControlName="en_word" matInput placeholder="english" value="english" type="text" name="en_word">
                 </mat-form-field>
 
+                <!-- # name: pt_br_word, informa as palavras em portugues -->
                 <mat-form-field class="example-full-width" appearance="fill">
                     <mat-label>português</mat-label>
-                    <input matInput placeholder="Ex. Pizza" value="português">
+                    <input  formControlName="pt_br_word" matInput placeholder="Ex. Pizza" value="português" name="pt_br_word">
                 </mat-form-field>
                 
+                <!-- # name: comments, permite cadastrar uma descrição -->
                 <mat-form-field class="example-full-width" appearance="fill">
                     <mat-label>Comments</mat-label>
-                    <textarea matInput placeholder="Comentário"></textarea>
+                    <textarea formControlName="comments" matInput placeholder="Comentário" name="comments"></textarea>
                 </mat-form-field>
 
                 <div class="start-page-buttons">
                     <div class="example-button-row">
-                        <div class="page-buttons"><button mat-raised-button color="primary"> Cadastrar </button></div>
+                        <!-- # submete formulário -->
+                        <div class="page-buttons">
+                            <button mat-raised-button color="primary" type="submit"> Cadastrar </button>
+                        </div>
                     </div>
                 </div>
             </div><!-- form-word -->
             <br>
             <br>
         </div> <!-- registry-word-wrap-content -->
-    </div>
-    
+    </div>    
 </form>

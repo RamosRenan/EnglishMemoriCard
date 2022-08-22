@@ -33,7 +33,12 @@
               "./node_modules/@angular/material/prebuilt-themes/pink-bluegrey.css",
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [],
+            "allowedCommonJsDependencies": [
+              "lodash",
+              "stream",
+              "crypto"
+           ]
           },
           "configurations": {
             "production": {

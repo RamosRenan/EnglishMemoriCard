@@ -1,28 +1,37 @@
- import { ImgWordsInterface } from "../interfaces/img-words-interface";
-import { WordsInterface } from "../interfaces/words-interface";
-
+ import { WordsInterface } from "src/app/interfaces/words-interface";
+import { ImgWordsInterface } from "../../interfaces/img-words-interface";
+ 
 export class Words implements WordsInterface{
     token       : string;
     id          : number;
-    en_word     : string;
-    pt_br_word  : string;
-    description : string;
+    en_word     : string[];
+    pt_br_word  : string[];
     img_words   : ImgWordsInterface[];
+    timestamp   : number;     // data  do cadastro
+    frequency   : number;   // freqência a ser aprsengtada
+    
+    description ?   : string;
+    is_important?   : boolean;  // informa se é importante
+    errors      ?   : number;      
+    points      ?   : number;      
 
     constructor(
         token       : string,
         id          : number,
-        en_word     : string,
-        pt_br_word  : string,
-        description : string,
-        img_words   : ImgWordsInterface[])
+        en_word     : string[],
+        pt_br_word  : string[],
+        img_words   : ImgWordsInterface[],
+        timestamp   : number,
+        frequency   : number,
+    )
     {
         this.token          = token;
         this.id             = id;
         this.en_word        = en_word;
         this.pt_br_word     = pt_br_word;
-        this.description    = description;
         this.img_words      = img_words;
+        this.timestamp      = timestamp;
+        this.frequency      = frequency;
     }
 
     
