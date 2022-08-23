@@ -6,8 +6,8 @@
 .mat-toolbar
 {
     background-color: #626bba;
-    position: absolute;
-    bottom: 0px;
+    /* position: absolute; */
+    /* bottom: 0px; */
 }
 
 .mat-icon, button

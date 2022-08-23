@@ -1,20 +1,40 @@
-<div class="start-page">
-    <div class="wrap-content-start-page">
-        <div class="title-start-page">
-            <h1>en-Memory Card</h1> 
-            <hr>
-        </div>   
-        
-        <div class="img-start-page">
-            <img src="../../assets/ship.svg" width="180" height="180" alt="">
+<br>
+<br>
+<div class="global-body-app">
+    <div class="row">
+        <!-- Title  -->
+        <div class="col s12">
+            <div class="title-start-page">
+                <h1>
+                    en-Memory Card
+                    <hr>
+                </h1> 
+            </div>          
         </div>
-
-        <div class="start-page-buttons">
-            <div class="example-button-row">
-                <div class="page-buttons"><button mat-raised-button color="primary">Iniciar</button></div>
-                <div class="page-buttons"><button mat-raised-button color="primary"><a href="/registry-word">Cadastrar palavra</a></button></div>
-                <div class="page-buttons"><button mat-raised-button color="primary">Listar palavras</button></div>
+        <!-- btn 1 -->
+        <div class="col s12">
+            <div class="img-start-page">
+                <img src="../../assets/ship.svg" width="180" height="180" alt="">
             </div>
         </div>
+        <!-- btn 2 -->
+        <div class="col s12">
+            <div class="page-buttons"><a [routerLink]="['/start']"><button mat-raised-button color="primary"> Iniciar </button></a></div>
+        </div>
+        <!-- btn 3 -->
+        <div class="col s12"> 
+            <div class="page-buttons"><button mat-raised-button color="primary"><a [routerLink]="['/registry-word']">Cadastrar palavra</a></button></div>
+        </div>
+        <!-- btn 3 -->
+        <div class="col s12"> 
+            <div class="page-buttons"><button mat-raised-button color="primary">Listar palavras</button></div>
+        </div>        
     </div>
+
+    <!-- <div class="row">
+        <div class="col s12 m6 l3"><p>s12 m6 l3</p></div>
+        <div class="col s12 m6 l3"><p>s12 m6 l3</p></div>
+        <div class="col s12 m6 l3"><p>s12 m6 l3</p></div>
+        <div class="col s12 m6 l3"><p>s12 m6 l3</p></div>
+    </div> -->
 </div>

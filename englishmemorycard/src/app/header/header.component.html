@@ -1,8 +1,11 @@
 <mat-toolbar color="primary">
-  <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+  <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon" mat-button (click)="openSide()">
     <mat-icon>menu</mat-icon>
   </button>
-  <span style="margin-left: 15px;"> <small> <a style="color: whitesmoke;" href="/">HOME</a></small> /  en-Memory Card</span>
+
+  <a [routerLink]="['/home']" style="color: whitesmoke;"> Home </a>
+
+  <span style="margin-left: 15px;"> <small> <a style="color: whitesmoke;" href="#"></a></small> </span>
   
   <span class="example-spacer"></span>
 

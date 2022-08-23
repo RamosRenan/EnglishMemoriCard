@@ -1,0 +1,45 @@
+.list-words
+{
+    width: 100%;
+    height: 100vh;
+    overflow-y: scroll;
+    /* background-color: aqua; */
+}
+
+.icons-tasks:hover{
+    font-size: 32px;
+}
+
+.s12
+{
+    background-color: aliceblue;
+}
+
+.mat-accordion, .mat-expansion-panel
+{
+    width: 97.5vw;
+    background-color: rgb(255, 248, 188);
+}
+
+span, p, h1, h2, h3, h4
+{
+    color: rgb(104, 104, 104);
+}
+
+.s1
+{
+    margin-top: 25px;
+    margin-right: 15px;
+}
+
+.mat-card 
+{
+    width: 100%;
+    height: 200px;
+}
+
+.mat-card > img
+{
+    width: 100%;
+    height: 100%;
+}

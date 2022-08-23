@@ -1,3 +1,33 @@
 <app-header>    </app-header>       <!-- header da aplicação -->
-<router-outlet> </router-outlet>    <!-- renderização do roteamento da aplicação -->
+
+<router-outlet> 
+    <mat-sidenav-container class="example-container" (backdropClick)="close('backdrop')" style=" height: 100vh; background-color: transparent; position: fixed;  ">
+        <!-- <p>
+            <button mat-button (click)="sidenav.open()">
+                <mat-icon>menu</mat-icon>
+            </button>
+            <a style="color: whitesmoke; text-decoration: none;" [routerLink]="['/home']">HOME</a>
+        </p> -->
+        
+        <mat-sidenav #sidenav (keydown.escape)="close('escape')" style="" disableClose>
+            <div style="width: auto; height: 40px;">
+            <p> 
+                <mat-icon class="closeSide" style="color: rgb(196, 196, 196); cursor: pointer;" mat-button (click)="close('toggle button')">
+                    close
+                </mat-icon> 
+            </p>
+            </div>
+            
+            <hr>
+    
+            <div style="padding: 15px; width: 80%; height: 80%; background-color: transparent;">
+                <p> <a [routerLink]="['/home']"> <mat-icon>subdirectory_arrow_right</mat-icon> Home </a> </p>
+                <p> <a [routerLink]="['/start']"> <mat-icon>subdirectory_arrow_right</mat-icon> Iniciar</a> </p>
+                <p> <a [routerLink]="['/registry-word']"> <mat-icon>subdirectory_arrow_right</mat-icon> Cadasdrar palavra </a> </p>
+                <p> <a [routerLink]="['/list-word']"> <mat-icon>subdirectory_arrow_right</mat-icon> Listar</a> </p>
+            </div>
+        </mat-sidenav>    
+    </mat-sidenav-container>
+</router-outlet>    <!-- renderização do roteamento da aplicação -->
+
 <app-footer>    </app-footer>       <!-- roda pe´da aplicação -->

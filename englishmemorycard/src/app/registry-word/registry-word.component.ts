@@ -21,12 +21,12 @@ export class RegistryWordComponent implements OnInit
   public words!       :Words;
   public isChecked    :boolean = true;
 
-  public url            :string = "";
+  public url            :string = "https://icon-library.com/images/icon-for-images/icon-for-images-13.jpg";
   public en_words!      :string[];
   public pt_br_words!   :string[];
   
   // reactive form group
-  formRegistryWords!  :FormGroup;
+  formRegistryWordss!   :FormGroup;
   
   constructor(private registryWordJserverService:RegistryWordJserverService) { }
   
@@ -34,13 +34,13 @@ export class RegistryWordComponent implements OnInit
 
   ngOnInit(): void {
 
-    this.formRegistryWords = new FormGroup(
+    this.formRegistryWordss = new FormGroup(
       {
-        groupForm1 : new FormGroup({
+        groupForm : new FormGroup({
           important     : new FormControl(),
-          utl_img       : new FormControl(),
           en_word       : new FormControl(),
           pt_br_word    : new FormControl(),
+          url_img       : new FormControl(),
           comments      : new FormControl(),
         }),
       }
@@ -52,7 +52,7 @@ export class RegistryWordComponent implements OnInit
   processForm()
   {
     // log valores do formalário
-    console.log(this.formRegistryWords.value.groupForm1);
+    console.log(this.formRegistryWordss.value.groupForm);
     
     var ff = hash('sha224');
 
@@ -60,24 +60,31 @@ export class RegistryWordComponent implements OnInit
 
     console.log(Date.now());
 
-    this.img_words.push(new ImgWords( Math.random()*Date.now(), objectHsh(Math.random()*Date.now()), " ", this.formRegistryWords.value.groupForm1.utl_img, 0));
+    this.img_words.push(new ImgWords( Math.random()*Date.now(), objectHsh(Math.random()*Date.now()), " ", this.formRegistryWordss.value.groupForm.url_img, 0));
 
     // criando nova instância de words
     this.words =  new Words(objectHsh(
-      this.formRegistryWords.value.groupForm1),
+      this.formRegistryWordss.value.groupForm),
       Math.random()*Date.now(),
-      this.formRegistryWords.value.groupForm1.en_word,
-      this.formRegistryWords.value.groupForm1.pt_br_word,
+      this.formRegistryWordss.value.groupForm.en_word,
+      this.formRegistryWordss.value.groupForm.pt_br_word,
       this.img_words,
       Date.now(),
       125
     );
     console.log(this.words);
 
-    this.url = this.formRegistryWords.value.groupForm1.utl_img;
+    this.words.description =  this.formRegistryWordss.value.groupForm.comments;
+
+    this.url = this.formRegistryWordss.value.groupForm.url_img;
       
-    this.en_words     = this.formRegistryWords.value.groupForm1.en_word.split(" ");
-    this.pt_br_words  = this.formRegistryWords.value.groupForm1.en_word.split(" ");
+    this.en_words     = this.formRegistryWordss.value.groupForm.en_word.split(" ");
+    
+    this.pt_br_words  = this.formRegistryWordss.value.groupForm.pt_br_word.split(" ");
+
+    this.formRegistryWordss.reset;
+
+    this.registryWordJserverService.insert(this.words).subscribe();
   }// processForm()
 
 }// class

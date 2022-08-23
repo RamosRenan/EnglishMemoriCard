@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { MatSidenav } from '@angular/material/sidenav';
+import { AppComponent } from '../app.component';
 
 @Component({
   selector: 'app-header',
@@ -6,10 +8,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-
-  constructor() { }
+  private appComponent!:AppComponent;
+  
+  constructor(private _appComponent:AppComponent) 
+  {
+    this.appComponent = _appComponent;
+  }
 
   ngOnInit(): void {
   }
 
+  reason = '';
+
+  openSide()
+  {
+    this.appComponent.eventSideNav.subscribe();
+  }
 }

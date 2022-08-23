@@ -1,0 +1,102 @@
+<form class="example-form" >
+    <div class="global-body-app"  >
+        <div class="row play-management">
+            <div class="col s12 m6 l3"><p style="color: green;"> <mat-icon>mood</mat-icon> Rights: 0     </p></div>
+            <div class="col s12 m6 l3"><p style="color: red;"> <mat-icon>mood_bad</mat-icon> Error: 0      </p></div>
+            <div class="col s12 m6 l3"><p style="color: cornflowerblue;"> <mat-icon>school</mat-icon> Points: 0     </p></div>
+            <div class="col s12 m6 l3"><p> <mat-icon> import_export</mat-icon> Ranking: 0 </p></div>
+        </div>
+
+        <!-- Informa se acertou  -->
+        <div class="row">
+            <div class="col s12">
+                <div class="title">
+                    <span> Acertou ! </span>
+                </div>    
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- Title  -->
+            <div class="col s12">
+                <div class="title">
+                    <h1>Memorizar</h1>
+                </div>    
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- card 1 -->
+            <div class="col s6">
+                <!-- # form imagem selecionada pelo usuario -->
+                <mat-card>
+                    <div class="wrap-img-in-card">
+                        <img src="{{url}}" alt="">
+                    </div>
+                </mat-card>
+            </div> 
+            <!-- card 2 -->
+            <div class="col s6">
+                <!-- palavras cadastradas pelo usuario, inglex e portugues -->
+                <mat-card>
+                    <p style="color: black;"> <strong>En</strong> </p>
+                    <div style=" overflow-y: scroll; height: 43px">
+                        <span style="color: black;" >
+                            <p>
+                                <span *ngFor="let item of en_words; index as i;"> <strong> {{i}}. </strong> {{item}}; </span>
+                            </p>
+                        </span>
+                    </div>
+    
+                    <hr>
+    
+                    <p style="color: black;"> <strong>Pt-br</strong> </p>
+                    <div style=" overflow-y: scroll; height: 43px">
+                        <span style="color: black;" >
+                            <p>
+                                <span *ngFor="let item of pt_br_words; index as i;"> <strong> {{i}}. </strong> {{item}}; </span>
+                            </p>
+                        </span>
+                    </div>
+                </mat-card>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- Important -->
+            <div class="col s12">
+                <p>
+                    <label>
+                      <input type="checkbox" />
+                      <span>Review !</span>
+                    </label>
+                  </p>
+            </div>
+        </div>
+
+        <!-- input resposta -->
+        <div class="row">
+            <div class="col s12">
+                <!-- apenas utiliza estilo de check box mas não o é -->
+                <div class="col s12" style="padding: 15px;">
+                    <!-- # name: url_img, permite o usuario informar utl da imagem -->
+                    <label for=""> <strong> <h6>Informe a palavra</h6></strong> </label>
+                    <br>
+                    <input placeholder="Qual a palavra ?" type="text" name="url_img" style="border : none; outline: none;">
+                </div>
+            </div>
+        </div>
+
+        <!-- button responder -->
+        <div class="row">
+            <div class="col s12">
+                <div class="col s12" style="padding: 12px;">
+                    <button mat-raised-button color="primary" type="submit"> Responder </button>
+                </div>
+            </div>
+        </div>
+         
+       <button (click)="show()"></button>
+    </div>
+</form>
+    

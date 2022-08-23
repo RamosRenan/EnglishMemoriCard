@@ -1,0 +1,45 @@
+<div class="list-words">
+    <mat-accordion *ngFor="let item of list_words_all">
+        <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    <span> {{item.en_word[0]}} </span>
+                </mat-panel-title>
+                <mat-panel-description>
+                    <div class="row" style="width: 50%; height: auto; margin-top: 15px;">
+                        <div class="col s12 m6 l3" style="background-color: transparent;"><p style="color: green;"> <mat-icon>mood</mat-icon> Rights: 0     </p></div>
+                        <div class="col s12 m6 l3" style="background-color: transparent;"><p style="color: red;"> <mat-icon>mood_bad</mat-icon> Error: 0      </p></div>
+                        <div class="col s12 m6 l3" style="background-color: transparent;"><p style="color: cornflowerblue;"> <mat-icon>school</mat-icon> Points: 0     </p></div>
+                        <div class="col s12 m6 l3" style="background-color: transparent;"><p> <mat-icon> import_export</mat-icon> Ranking: 0 </p></div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col s1"><span ><a  id="{{item.id}}" style="color: orange;" routerLink="/edit-word/{{item.id}}">  <mat-icon class="icons-tasks">edit</mat-icon></a></span></div>
+                        <div class="col s1"><span><a   id="{{item.id}}" style="color: red;" (click)="sujeitoDelete(item.id)" >                         <mat-icon class="icons-tasks">delete_forever</mat-icon></a></span></div>
+                        <div class="col s1"><span ><a  id="{{item.id}}" style="color: green;" [routerLink]="">                       <mat-icon class="icons-tasks">collections</mat-icon></a></span></div>
+                      </div>
+                </mat-panel-description>
+            </mat-expansion-panel-header>
+
+            <hr>
+             
+            <h4> {{item.en_word}} </h4>
+            <br>
+            <div class="row">
+                <div class="col s6">
+                    <mat-card class="">
+                        <img src="{{item.img_words[0].url}}" alt="">
+                    </mat-card>
+                </div>
+
+                <div class="col s6">
+                    <mat-card class="">
+                        <span>
+                            {{item._description}}
+                        </span>
+                    </mat-card>
+                </div>
+            </div>
+        </mat-expansion-panel>
+    </mat-accordion>
+</div>

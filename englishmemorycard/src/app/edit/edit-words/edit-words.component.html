@@ -1,0 +1,98 @@
+<form class="example-form" [formGroup]="formRegistryWordss" (ngSubmit)="processForm()">
+    <div class="global-body-app" formGroupName="groupForm">
+        <div class="row">
+            <!-- Title  -->
+            <div class="col s12">
+                <div class="title">
+                    <h1> Vincular imagem <small> <span style="color:orange"> Em edição </span> </small> </h1>
+                </div> 
+                <small><span>ID: {{id}}</span></small>
+                <br>   
+            </div>
+            <!-- card 1 -->
+            <div class="col s6">
+                <!-- # form imagem selecionada pelo usuario -->
+                <mat-card class="">
+                    <img src="{{url}}" alt="">
+                </mat-card>
+            </div> 
+            <!-- card 2 -->
+            <div class="col s6">
+                <!-- palavras cadastradas pelo usuario, inglex e portugues -->
+                <mat-card>
+                    <p style="color: black;"> <strong> <mat-icon>edit</mat-icon> En</strong> </p>
+                    <div style=" overflow-y: scroll; height: 43px">
+                        <span style="color: black;" >
+                            <p>
+                                <span  > {{en_words}}; </span>
+                            </p>
+                        </span>
+                    </div>
+    
+                    <hr>
+    
+                    <p style="color: black;"> <strong> <mat-icon>edit</mat-icon> Pt-br</strong> </p>
+                    <div style=" overflow-y: scroll; height: 43px">
+                        <span style="color: black;" >
+                            <p>
+                                <span > {{en_words}}; </span>
+                            </p>
+                        </span>
+                    </div>
+                </mat-card>
+            </div>
+     
+            <!-- apenas utiliza estilo de check box mas não o é -->
+            <div class="col s12" style="padding: 15px;">
+                <!-- # name: url_img, permite o usuario informar utl da imagem -->
+                <input formControlName="url_img" [value]="url" placeholder="Url img, Ex.: https://dynamic-media-cdn.tripadvisor.com/media/photo-o" type="text" name="url_img" style="border : none; outline: none;">
+            </div>
+             <!-- title -->
+            <div class="col s12">
+                <p>
+                    <mat-icon>edit</mat-icon>
+                    <label>
+                      <input type="checkbox" />
+                      <span>  Important !</span>
+                    </label>
+                  </p>
+            </div>
+        </div>
+    
+        <hr>
+    
+        <div class="row">
+             <!-- title -->
+            <div class="col s12">
+                <div class="title">
+                    <h1> Cadastrar palavra <small> <span style="color:orange"> Em edição </span> </small> </h1>
+                </div>
+            </div>
+        </div>
+    
+        <div> 
+            <div class="row"  >
+                <div class="col s7 push-s5">
+                    <div class="section">
+                        <mat-label> <mat-icon>edit</mat-icon> english word </mat-label>
+                        <input formControlName="en_word" [value]="en_words" matInput placeholder="english" value="english" type="text" name="en_word"> 
+                    </div>
+    
+                    <div class="section">
+                        <mat-label> <mat-icon>edit</mat-icon> português</mat-label>
+                        <p><input formControlName="pt_br_word" [value]="pt_br_words" matInput placeholder="Ex. Pizza" value="português" name="pt_br_word"></p>
+                    </div>
+                </div>
+    
+                <div class="col s5 pull-s7">
+                    <mat-label> <mat-icon>edit</mat-icon> Descrição da palavra</mat-label>
+                    <textarea style="height: 230px;" formControlName="comments" [value]="comments" matInput placeholder="Comentário" name="comments"></textarea>
+                </div>
+                <div class="col s12" style="padding: 12px;">
+                    <button mat-raised-button color="primary" type="submit"> <mat-icon>edit</mat-icon> Editar </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+    

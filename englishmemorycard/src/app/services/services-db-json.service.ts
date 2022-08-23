@@ -1,13 +1,13 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
- import { Observable } from 'rxjs';
- import { WordsInterface } from '../interfaces/words-interface';
+import { Observable } from 'rxjs';
+import { WordsInterface } from '../interfaces/words-interface';
 import { Words } from '../model/words/words';
 
 @Injectable({
   providedIn: 'root'
 })
-export class RegistryWordJserverService {
+export class ServicesDbJsonService {
 
   private dbServUrl:string = "http://localhost:3000/words";
 
@@ -40,23 +40,12 @@ export class RegistryWordJserverService {
   }
 
   /**
-   * update registro 
+   * inserir registro 
    */
-   public update(data:Words, id:number) : Observable<Words>
+   public delete(id:number) : Observable<Words>
    {
-     return this.httpClient.put<Words>(
-      this.dbServUrl+"/"+id, data
+     return this.httpClient.delete<Words>(
+      this.dbServUrl+"/"+id
      );
    }
-
-   /**
-   * update registro 
-   */
-    public find(id:number) : Observable<Words>
-    {
-      return this.httpClient.get<Words>(
-        this.dbServUrl+"/"+id
-      );
-    }
-
-}// class
+}

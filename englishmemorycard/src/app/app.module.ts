@@ -17,6 +17,11 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatInputModule} from '@angular/material/input';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import { StartGameComponent } from './start-game/start-game/start-game.component';
+import { ListWordsComponent } from './list/list-words/list-words.component';
+import {MatExpansionModule} from '@angular/material/expansion';
+import { EditWordsComponent } from './edit/edit-words/edit-words.component';
 
 
 
@@ -28,6 +33,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
      PageNotFoundComponent,
      StartPageComponent,
      RegistryWordComponent,
+     StartGameComponent,
+     ListWordsComponent,
+     EditWordsComponent,
     ],
   imports: [
     BrowserModule,
@@ -42,6 +50,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    MatSidenavModule,
+    MatExpansionModule,
    ],
   providers: [],
   bootstrap: [AppComponent]

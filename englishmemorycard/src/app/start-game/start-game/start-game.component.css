@@ -1,0 +1,16 @@
+ .wrap-img-in-card
+ {
+    width: 100%;
+    height: 185px;
+ }
+
+ .wrap-img-in-card > img
+ {
+    width: inherit;
+    height: inherit;
+ }
+
+ .play-management
+ {
+   background-color: rgb(245, 232, 199);
+ }

@@ -1,1 +1,178 @@
           // "builder": "@angular-devkit/build-angular:browser",
+
+          <mat-sidenav-container
+  class="example-container"
+  (backdropClick)="close('backdrop')"
+>
+  <mat-sidenav #sidenav (keydown.escape)="close('escape')" disableClose>
+    <p><button mat-button (click)="close('toggle button')">Toggle</button></p>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <p><button mat-button (click)="sidenav.open()">Open</button></p>
+    <p>Closed due to: {{reason}}</p>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
+
+
+
+
+
+
+
+
+
+<form class="example-form" [formGroup]="formRegistryWords" (ngSubmit)="processForm()">
+  <div class="registry-word" formGroupName="groupForm11">
+      <div class="registry-word-wrap-content">
+          <div class="title">
+              <h1>Vincular imagem</h1>
+          </div>
+
+          <!-- card reponsavel por apresentar imagem e as palavras -->
+          <div class="cards">
+              <!-- # form imagem selecionada pelo usuario -->
+              <mat-card>
+                  <img src="{{url}}" alt="" width="180" height="180">
+              </mat-card>
+              
+              <!-- palavras cadastradas pelo usuario, inglex e portugues -->
+              <mat-card>
+                  <p style="color: black;"> <strong>En</strong> </p>
+                  <div style=" overflow-y: scroll; height: 40px;">
+                      <span style="color: black;" >
+                          <p>
+                              <span *ngFor="let item of en_words; index as i;"> <strong> {{i}}. </strong> {{item}}; </span>
+                          </p>
+                      </span>
+                  </div>
+
+                  <hr>
+
+                  <p style="color: black;"> <strong>Pt-br</strong> </p>
+                  <div style=" overflow-y: scroll; height: 40px;">
+                      <span style="color: black;" >
+                          <p>
+                              <span *ngFor="let item of en_words; index as i;"> <strong> {{i}}. </strong> {{item}}; </span>
+                          </p>
+                      </span>
+                  </div>
+              </mat-card>
+          </div>
+
+          <!-- # name: utl_img, permite o usuario informar utl da imagem -->
+          <div class="check-me">
+              <div class="cards">
+                  <mat-card class="cards-imput">
+                      <input formControlName="utl_img" placeholder="Url img, Ex.: https://dynamic-media-cdn.tripadvisor.com/media/photo-o" type="text" name="urlImg" style="border : none; outline: none;">
+                  </mat-card>
+              </div>
+          </div>
+
+          <!-- # name:important, permite ao usuario informar se e palavra é importante para ele -->
+          <div class="check-me">
+              <section class="example-section">
+                  <mat-checkbox  formControlName="important" class="example-margin" name="important" id="important" ><span style="color: rgb(151, 25, 52);"> Important !</span></mat-checkbox>
+              </section>
+          </div>
+          
+          <hr>
+
+          <div class="title">
+              <h1>Cadastrar palavra</h1>
+          </div>
+
+          <div class="form-word">
+              <label for=""></label>
+              <!-- # name: en_word, informa as palavras em ingles -->
+              <mat-form-field class="example-full-width" appearance="fill">
+                  <mat-label>english word</mat-label>
+                  <input  formControlName="en_word" matInput placeholder="english" value="english" type="text" name="en_word">
+              </mat-form-field>
+
+              <!-- # name: pt_br_word, informa as palavras em portugues -->
+              <mat-form-field class="example-full-width" appearance="fill">
+                  <mat-label>português</mat-label>
+                  <input  formControlName="pt_br_word" matInput placeholder="Ex. Pizza" value="português" name="pt_br_word">
+              </mat-form-field>
+              
+              <!-- # name: comments, permite cadastrar uma descrição -->
+              <mat-form-field class="example-full-width" appearance="fill">
+                  <mat-label>Comments</mat-label>
+                  <textarea formControlName="comments" matInput placeholder="Comentário" name="comments"></textarea>
+              </mat-form-field>
+
+              <div class="start-page-buttons">
+                  <div class="example-button-row">
+                      <!-- # submete formulário -->
+                      <div class="page-buttons">
+                          <button mat-raised-button color="primary" type="submit"> Cadastrar </button>
+                      </div>
+                  </div>
+              </div>
+          </div><!-- form-word -->
+          <br>
+          <br>
+      </div> <!-- registry-word-wrap-content -->
+  </div>    
+</form>
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="start-game">
+    <div class="wrap-start-games-compoenets-center">
+        <div style="width: 98.7%; height: 70px; background-color: transparent; margin: 8px;">
+
+        </div>
+
+        <!-- card reponsavel por apresentar imagem e as palavras -->
+        <div class="cards">
+            <!-- # form imagem selecionada pelo usuario -->
+            <mat-card>
+                <img src=" " alt="" width="180" height="180">
+            </mat-card>
+            
+            &nbsp;
+
+            <!-- # form imagem selecionada pelo usuario -->
+            <mat-card>
+                <img src=" " alt="" width="180" height="180">
+            </mat-card>            
+        </div> <!-- cards -->
+
+        <form action="">
+            <div style="width: 98.7%; height: 50px; background-color: transparent; margin: 8px; align-items: center; justify-content: center;">
+                <label for=""> Word </label> 
+                <input type="text">
+
+                &nbsp;
+
+                <label for=""> Review </label>
+                <input type="checkbox" style="transform: scale(1.5);">
+            </div>
+
+            <div style="width: 98.7%; height: 50px; background-color: transparent; margin: 8px;">
+                <button type="submit"> Verificar </button>
+            </div>
+        </form>
+    </div> <!-- wrap-start-games-compoenets-center -->
+
+    <div class="wrap-start-games-compoenets-score">
+        <!-- card reponsavel por apresentar imagem e as palavras -->
+        <div class="cards">
+            <!-- # form imagem selecionada pelo usuario -->
+            
+            
+        </div> <!-- cards -->
+    </div> <!-- wrap-start-games-compoenets-center -->
+</div>

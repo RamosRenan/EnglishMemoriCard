@@ -10,7 +10,7 @@ export class Words implements WordsInterface{
     timestamp   : number;     // data  do cadastro
     frequency   : number;   // freqência a ser aprsengtada
     
-    description ?   : string;
+    _description !  : string;
     is_important?   : boolean;  // informa se é importante
     errors      ?   : number;      
     points      ?   : number;      
@@ -52,13 +52,15 @@ export class Words implements WordsInterface{
         return this.pt_br_word;
     }   
 
-    public get _description(){
-        return this.description;
+    public get description(){
+        return this._description;
     }   
 
     public get _img_words(){
         return this.img_words;
     }
     
-    
+    public set description(desc){
+        this._description = desc;
+    }
 }// class
