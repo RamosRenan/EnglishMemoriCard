@@ -10,9 +10,10 @@ import { ServicesDbJsonService } from 'src/app/services/services-db-json.service
   styleUrls: ['./start-game.component.css']
 })
 export class StartGameComponent implements OnInit {
-
   url?:string;
+
   en_words?:string[];
+
   pt_br_words?:String[];
 
   listWords!:Words ;
@@ -53,7 +54,7 @@ export class StartGameComponent implements OnInit {
     this.servicesDbJsonService.getAll().subscribe(
       data => {
         this.list_words_all = Array.of(data);
-        let objWord         =  JSON.parse(String(JSON.stringify(data)))[Math.floor(Math.random() * (JSON.parse(String(JSON.stringify(data))).length - 1))];
+        let objWord         = JSON.parse(String(JSON.stringify(data)))[Math.floor(Math.random() * (JSON.parse(String(JSON.stringify(data))).length - 1))];
         this.url            = objWord.img_words[0].url;
         this.en_words       = objWord.en_word.split(" ");
         this.pt_br_words    = objWord.pt_br_word.split(" ");

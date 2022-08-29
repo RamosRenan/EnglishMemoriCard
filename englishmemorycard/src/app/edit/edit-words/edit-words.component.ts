@@ -30,17 +30,7 @@ export class EditWordsComponent implements OnInit {
 
   ngOnInit(): void 
   {
-    this.route.params.subscribe(data=>this.id =data['id']);
-    
-    this.registryWordJserverService.find(this.id).subscribe(data=>{
-      console.log(data);
-      this.word = data;
-      this.url = data.img_words[0].url;
-      this.en_words = String(data.en_word);
-      this.pt_br_words = String(data.pt_br_word);
-      this.comments =  data.description != undefined ? data.description : "no comments, insert a comment will help you !";
-      }
-    );
+    this.route.params.subscribe(data=>this.id =data['id']); 
 
     this.formRegistryWordss = new FormGroup(
       {
@@ -54,6 +44,20 @@ export class EditWordsComponent implements OnInit {
       }
     );
 
+  }
+
+  async ngAfterViewInit()
+  {
+    console.log("----->>>: ngAfterViewInit()");
+    this.registryWordJserverService.find(this.id).subscribe(async data=>{
+      console.log(data);
+      this.word         = await data;
+      this.url          = await data.img_words[0].url;
+      this.en_words     = await String(data.en_word);
+      this.pt_br_words  = await String(data.pt_br_word);
+      this.comments     = await data.description != undefined ? data.description : "no comments, insert a comment will help you !";
+      }
+    );
   }
  
   processForm()
@@ -77,7 +81,7 @@ export class EditWordsComponent implements OnInit {
     this.registryWordJserverService.update(this.word, this.id).subscribe(data=>console.log(data));
 
     this.formRegistryWordss.updateOn;
-    // location.reload();
+    location.reload();
   }
 }
 
