@@ -85,15 +85,20 @@ export class RegistryWordComponent implements OnInit
     
     this.pt_br_words  = this.formRegistryWordss.value.groupForm.pt_br_word.split(" ");
 
-    this.formRegistryWordss.reset;
-    
-    location.reload();
-
     // verifica se inseri 
     if(this.formRegistryWordss.errors)
       console.log("Não cadastrado, form com erros");
     else
       this.registryWordJserverService.insert(this.words).subscribe();
+
+    try {
+      localStorage.setItem(String(this.words.id), String(this.words));
+    } catch (error) {
+      
+    }
+    
+    this.formRegistryWordss.reset;
+    // location.reload();
   }// processForm()
 
 }// class

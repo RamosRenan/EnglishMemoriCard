@@ -124,7 +124,7 @@
                     <textarea style="height: 230px;" required minlength="2" formControlName="comments" matInput placeholder="Comentário" name="comments"></textarea>
                 </div>
                 <div class="col s12" style="padding: 12px;">
-                    <button mat-raised-button color="primary" type="submit"> Cadastrar </button>
+                    <button mat-raised-button color="primary" type="submit" disabled="{{!formRegistryWordss.valid}}"> Cadastrar </button>
                 </div>
             </div>
         </div>
