@@ -1,102 +1,140 @@
 <form class="example-form" [formGroup]="formRegistryWordss" (ngSubmit)="processForm()">
-<div class="global-body-app" formGroupName="groupForm">
-    <div class="row">
-        <!-- Title  -->
-        <div class="col s12">
-            <div class="title">
-                <h1>Vincular imagem</h1>
+    <div class="global-body-app" formGroupName="groupForm">
+        <div class="row">
+            <!-- Title  -->
+            <div class="col s12">
+                <div class="title">
+                    <h1>Vincular imagem</h1>
+                </div> 
+                <br>   
+            </div>
+            <!-- card 1 -->
+            <div class="col s6">
+                <!-- # form imagem selecionada pelo usuario -->
+                <mat-card class="">
+                    <img src="{{url}}" alt="">
+                </mat-card>
             </div> 
-            <br>   
-        </div>
-        <!-- card 1 -->
-        <div class="col s6">
-            <!-- # form imagem selecionada pelo usuario -->
-            <mat-card class="">
-                <img src="{{url}}" alt="">
-            </mat-card>
-        </div> 
-        <!-- card 2 -->
-        <div class="col s6">
-            <!-- palavras cadastradas pelo usuario, inglex e portugues -->
-            <mat-card>
-                <p style="color: black;"> <strong>En</strong> </p>
-                <div style=" overflow-y: scroll; height: 43px">
-                    <span style="color: black;" >
-                        <p>
-                            <span *ngFor="let item of en_words; index as i;"> <strong> {{i}}. </strong> {{item}}; </span>
-                        </p>
-                    </span>
-                </div>
+            <!-- card 2 -->
+            <div class="col s6">
+                <!-- palavras cadastradas pelo usuario, inglex e portugues -->
+                <mat-card>
+                    <p style="color: black;"> <strong>En</strong> </p>
+                    <div style=" overflow-y: scroll; height: 43px">
+                        <span style="color: black;" >
+                            <p>
+                                <span *ngFor="let item of en_words; index as i;"> <strong> {{i}}. </strong> {{item}}; </span>
+                            </p>
+                        </span>
+                    </div>
 
-                <hr>
+                    <hr>
 
-                <p style="color: black;"> <strong>Pt-br</strong> </p>
-                <div style=" overflow-y: scroll; height: 43px">
-                    <span style="color: black;" >
-                        <p>
-                            <span *ngFor="let item of pt_br_words; index as i;"> <strong> {{i}}. </strong> {{item}}; </span>
-                        </p>
-                    </span>
-                </div>
-            </mat-card>
-        </div>
- 
-        <!-- apenas utiliza estilo de check box mas não o é -->
-        <div class="col s12" style="padding: 15px;">
-            <!-- # name: url_img, permite o usuario informar utl da imagem -->
-            <input formControlName="url_img" placeholder="Url img, Ex.: https://dynamic-media-cdn.tripadvisor.com/media/photo-o" type="text" name="url_img" style="border : none; outline: none;">
-        </div>
-         <!-- title -->
-        <div class="col s12">
-            <p>
-                <label>
-                  <input type="checkbox" />
-                  <span>Important !</span>
-                </label>
-              </p>
-        </div>
-    </div>
+                    <p style="color: black;"> <strong>Pt-br</strong> </p>
+                    <div style=" overflow-y: scroll; height: 43px">
+                        <span style="color: black;" >
+                            <p>
+                                <span *ngFor="let item of pt_br_words; index as i;"> <strong> {{i}}. </strong> {{item}}; </span>
+                            </p>
+                        </span>
+                    </div>
+                </mat-card>
+            </div>
+    
+            <!-- apenas utiliza estilo de check box mas não o é -->
+            <div class="col s12" style="padding: 15px;">
+                <!-- # name: url_img, permite o usuario informar utl da imagem -->
+                <label for="url_img">Url *</label>
 
-    <hr>
+                <br>
 
-    <div class="row">
-         <!-- title -->
-        <div class="col s12">
-            <div class="title">
-                <h1>Cadastrar palavra</h1>
+                <span *ngIf="(formRegistryWordss.errors?.['formErro'].url_imgErrors.url_imgError) 
+                && 
+                (formRegistryWordss.get('groupForm.url_img')?.touched || formRegistryWordss.get('groupForm.url_img')?.dirty)" style="color: red;"> 
+                    <small> {{formRegistryWordss.errors?.['formErro'].url_imgErrors.info}} </small>
+                </span>
+
+                <input formControlName="url_img" required minlength="12" placeholder="Url img, Ex.: https://dynamic-media-cdn.tripadvisor.com/media/photo-o" type="text" name="url_img" style="border : none; outline: none;">
+            </div>
+            <!-- title -->
+            <div class="col s12">
+                <p>
+                    <label>
+                    <input type="checkbox" />
+                    <span>Important !</span>
+                    </label>
+                </p>
             </div>
         </div>
-    </div>
+
+        <hr>
+
+        <div class="row">
+            <!-- title -->
+            <div class="col s12">
+                <div class="title">
+                    <h1>Cadastrar palavra</h1>
+                </div>
+            </div>
+        </div>
 
         <div> 
-        <div class="row"  >
-            <div class="col s7 push-s5">
-                <div class="section">
-                    <mat-label>english word </mat-label>
-                     <input formControlName="en_word" matInput placeholder="english" value="english" type="text" name="en_word"> 
+            <div class="row"  >
+                <div class="col s7 push-s5">
+                    <div class="section">
+                        <mat-label>
+                            english word *
+                            <br>
+                            <span *ngIf="(formRegistryWordss.errors?.['formErro'].en_wordErrors.en_wordError)
+                            && 
+                            (formRegistryWordss.get('groupForm.en_word')?.touched || formRegistryWordss.get('groupForm.en_word')?.dirty)" 
+                            style="color: red;"> 
+                            <small> {{formRegistryWordss.errors?.['formErro'].en_wordErrors.info}} </small>
+                            </span>
+                        </mat-label>
+                        <input formControlName="en_word" required minlength="2" matInput placeholder="english" value="english" type="text" name="en_word"> 
+                    </div>
+
+                    <div class="section">
+                        <mat-label>
+                            português *
+                            <br>
+                            <span *ngIf="(formRegistryWordss.errors?.['formErro'].ptBr_wordErrors.ptBr_wordError)
+                            && 
+                            (formRegistryWordss.get('groupForm.pt_br_word')?.touched || formRegistryWordss.get('groupForm.pt_br_word')?.dirty)" 
+                            style="color: red;"> 
+                            <small> {{formRegistryWordss.errors?.['formErro'].ptBr_wordErrors.info}} </small>
+                            </span>
+                        </mat-label>
+                        <p><input formControlName="pt_br_word" required minlength="2" matInput placeholder="Ex. Pizza" value="português" name="pt_br_word"></p>
+                    </div>
                 </div>
 
-                <div class="section">
-                    <mat-label>português</mat-label>
-                    <p><input formControlName="pt_br_word" matInput placeholder="Ex. Pizza" value="português" name="pt_br_word"></p>
+                <div class="col s5 pull-s7">
+                    <mat-label>
+                        Descrição da palavra *
+                        <br>
+                        <span *ngIf="(formRegistryWordss.errors?.['formErro'].decricption_wordErrors.decricption_wordError)
+                        && 
+                        (formRegistryWordss.get('groupForm.comments')?.touched || formRegistryWordss.get('groupForm.comments')?.dirty)" 
+                        style="color: red;"> 
+                        <small> {{formRegistryWordss.errors?.['formErro'].decricption_wordErrors.info}} </small>
+                        </span>
+                    </mat-label>
+                    <textarea style="height: 230px;" required minlength="2" formControlName="comments" matInput placeholder="Comentário" name="comments"></textarea>
+                </div>
+                <div class="col s12" style="padding: 12px;">
+                    <button mat-raised-button color="primary" type="submit" disabled="{{!formRegistryWordss.valid}}"> Cadastrar </button>
                 </div>
             </div>
-
-            <div class="col s5 pull-s7">
-                <mat-label>Descrição da palavra</mat-label>
-                <textarea style="height: 230px;" formControlName="comments" matInput placeholder="Comentário" name="comments"></textarea>
-            </div>
-            <div class="col s12" style="padding: 12px;">
-                <button mat-raised-button color="primary" type="submit"> Cadastrar </button>
-            </div>
         </div>
-        </div>
-        <!-- <div class="row">
-            <div class="col s12 m6 l3"><p>s12 m6 l3</p></div>
-            <div class="col s12 m6 l3"><p>s12 m6 l3</p></div>
-            <div class="col s12 m6 l3"><p>s12 m6 l3</p></div>
-            <div class="col s12 m6 l3"><p>s12 m6 l3</p></div>
-        </div> -->
-        
+        <!-- 
+            <div class="row">
+                <div class="col s12 m6 l3"><p>s12 m6 l3</p></div>
+                <div class="col s12 m6 l3"><p>s12 m6 l3</p></div>
+                <div class="col s12 m6 l3"><p>s12 m6 l3</p></div>
+                <div class="col s12 m6 l3"><p>s12 m6 l3</p></div>
+            </div> 
+        -->
     </div>
 </form>

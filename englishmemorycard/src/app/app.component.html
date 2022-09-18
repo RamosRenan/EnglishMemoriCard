@@ -10,12 +10,24 @@
         </p> -->
         
         <mat-sidenav #sidenav (keydown.escape)="close('escape')" style="" disableClose>
-            <div style="width: auto; height: 40px;">
-            <p> 
-                <mat-icon class="closeSide" style="color: rgb(196, 196, 196); cursor: pointer;" mat-button (click)="close('toggle button')">
-                    close
-                </mat-icon> 
-            </p>
+            <div style="width: 100%; height: 50px; background-color: transparent;">
+                <!-- <p style="color: black;">
+                    <i class="material-icons" >account_circle</i>
+                    User:
+                </p> -->
+                <p style="direction: rtl; color: black;"> 
+                    <mat-icon class="closeSide" style="color: rgb(196, 196, 196); cursor: pointer;" mat-button (click)="close('toggle button')">
+                        close
+                    </mat-icon> 
+                </p>
+                <i class="material-icons" style="font-size: 42px;color: black;  margin-top: -38px; position: absolute;">account_box</i> 
+                <span style=" color: black; margin-top: -35px; position: absolute; left: 55px;"> 
+                    <span style="top: -5px; position: relative;">
+                        Renan Barbosa
+                        <br>
+                        <small>  Id: 123456798 </small> 
+                    </span>
+                </span>
             </div>
             
             <hr>

@@ -1,11 +1,12 @@
 import { Token } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ImgWords } from '../model/img-words/img-words';
 import { Words } from '../model/words/words';
 import { RegistryWordJserverService } from './registry-word-jserver.service';
 import * as hash from 'create-hash';
 import * as objectHsh from 'object-hash';
+import { validRegistryForm } from '../validators/registry-form-validator';
 
 
 @Component({
@@ -43,7 +44,9 @@ export class RegistryWordComponent implements OnInit
           url_img       : new FormControl(),
           comments      : new FormControl(),
         }),
-      }
+        'name':new FormControl('renan barbosa')
+      },
+      {validators:validRegistryForm}
     );
 
   }// ngOnInit()
@@ -82,9 +85,20 @@ export class RegistryWordComponent implements OnInit
     
     this.pt_br_words  = this.formRegistryWordss.value.groupForm.pt_br_word.split(" ");
 
-    this.formRegistryWordss.reset;
+    // verifica se inseri 
+    if(this.formRegistryWordss.errors)
+      console.log("Não cadastrado, form com erros");
+    else
+      this.registryWordJserverService.insert(this.words).subscribe();
 
-    this.registryWordJserverService.insert(this.words).subscribe();
+    try {
+      localStorage.setItem(String(this.words.id), String(this.words));
+    } catch (error) {
+      
+    }
+    
+    this.formRegistryWordss.reset;
+    // location.reload();
   }// processForm()
 
 }// class
