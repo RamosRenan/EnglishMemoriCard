@@ -1,145 +1,66 @@
 {
-    "words": [
-      {
-        "token": "fdfdfdfdf",
-        "id": 123,
-        "en_word": "wide",
-        "pt_br_word": "largo",
-        "description": "largo; grande;",
-        "img_words": [
-          {
-            "id": 123,
-            "token": "pojokjo",
-            "path": "/p/pl",
-            "url": "http://l.com",
-            "size": 4563
-          }
-        ]
-      },
-      {
-        "token": "fdfdfdfd1f",
-        "id": 1123,
-        "en_word": "wide",
-        "pt_br_word": "largo",
-        "description": "largo; grande;",
-        "img_words": [
-          {
-            "id": 1213,
-            "token": "pojo1kjo",
-            "path": "/p/pl1",
-            "url": "http://l.com",
-            "size": 45163
-          }
-        ]
-      },
-      {
-        "token": "72481d7c41500f7ea01dcfcd67558db53498e1c3",
-        "id": 1640867995243.2417,
-        "en_word": "fbfdbf",
-        "pt_br_word": "bdbdbf",
-        "img_words": [
-          {
-            "id": 575904719428.6324,
-            "token": "e9a42c6da1a5c741247f1f4134e41ebe1f24eab9",
-            "path": " ",
-            "url": "https://static.escolakids.uol.com.br/2019/07/paisagem-natural.jpg",
-            "size": 0
-          }
-        ],
-        "timestamp": 1661129009648,
-        "frequency": 125
-      },
-      {
-        "token": "5c8c87691b3abd5a96f93b72dd3f19b2eec5dcd7",
-        "id": 1265489575417.9348,
-        "en_word": "gdfg grghrg r gr grgrg rrgrgr  rgrg ",
-        "pt_br_word": "dgdg rh rh",
-        "img_words": [
-          {
-            "id": 55519169646.035576,
-            "token": "31adddb5a2f2c899af76ca6342308a009cad5801",
-            "path": " ",
-            "url": "https://st2.depositphotos.com/1005147/5192/i/450/depositphotos_51926417-stock-photo-hands-holding-the-sun-at.jpg",
-            "size": 0
-          }
-        ],
-        "timestamp": 1661131328857,
-        "frequency": 125
-      },
-      {
-        "token": "d4c1a2ee6492f285630fefc7c78b79df7b2328e4",
-        "id": 645067505862.7367,
-        "en_word": "gfdndfgn hdf tth ththth tht ht",
-        "pt_br_word": "htht",
-        "img_words": [
-          {
-            "id": 586461754836.0192,
-            "token": "51b837a7354d6ec30100e0b843fba1e71f0f8e5e",
-            "path": " ",
-            "url": "https://st2.depositphotos.com/1005147/5192/i/450/depositphotos_51926417-stock-photo-hands-holding-the-sun-at.jpg",
-            "size": 0
-          }
-        ],
-        "timestamp": 1661131399432,
-        "frequency": 125
-      },
-      {
-        "token": "842cdbe3e303ad65b6b1d465ebb5bb3780b0767e",
-        "id": 1127094132184.8958,
-        "en_word": "fgnghntyn rtyjytj ytjy tjty jytyjtyj",
-        "pt_br_word": "ytjytjytj ytjytj ytj yt",
-        "img_words": [
-          {
-            "id": 751332342819.9185,
-            "token": "b8ec5e5d796859f5deded1d02658d6e4fd8f4a02",
-            "path": " ",
-            "url": "https://st2.depositphotos.com/1005147/5192/i/450/depositphotos_51926417-stock-photo-hands-holding-the-sun-at.jpg",
-            "size": 0
-          }
-        ],
-        "timestamp": 1661131485912,
-        "frequency": 125
-      },
-      {
-        "token": "9fe6301ff94c5c397558406e27bde618894778fb",
-        "id": 700586321464.1427,
-        "en_word": "nmgfnhfgmnf fmmytmytm tymtymytm tym yt",
-        "pt_br_word": "m tym ytm",
-        "img_words": [
-          {
-            "id": 1453088613324.8203,
-            "token": "972a389922a77cabb9205694f2be25bfc52fdb01",
-            "path": " ",
-            "url": "https://st2.depositphotos.com/1005147/5192/i/450/depositphotos_51926417-stock-photo-hands-holding-the-sun-at.jpg",
-            "size": 0
-          }
-        ],
-        "timestamp": 1661131565714,
-        "frequency": 125
-      },
-      {
-        "token": "7bb43888d7188a2cc6c18b34cb84c83d379521b2",
-        "id": 138334538444.84763,
-        "en_word": "dddddd aaaaaaaa sss wwwww",
-        "pt_br_word": "xxx zzzzzzzz aaa qq",
-        "img_words": [
-          {
-            "id": 1453088613324.8203,
-            "token": "972a389922a77cabb9205694f2be25bfc52fdb01",
-            "path": " ",
-            "url": "https://st2.depositphotos.com/1005147/5192/i/450/depositphotos_51926417-stock-photo-hands-holding-the-sun-at.jpg",
-            "size": 0
-          },
-          {
-            "id": 759045189931.8173,
-            "token": "9c2f94fa741daa9c9396a93718ae014176312cf4",
-            "path": " ",
-            "url": "https://st2.depositphotos.com/1005147/5192/i/450/depositphotos_51926417-stock-photo-hands-holding-the-sun-at.jpg",
-            "size": 0
-          }
-        ],
-        "timestamp": 1661131981365,
-        "frequency": 125
-      }
-    ]
-  }
+  "words": [
+    {
+      "token": "2957cfa93c44468d56a50eead25872bb253c45e8",
+      "id": 200573893956.109,
+      "en_word": "over time",
+      "pt_br_word": "ao longo do tempo",
+      "img_words": [
+        {
+          "id": 1326881260543.3025,
+          "token": "24b9a20757ec8fdbcb62d505bc18e2a2de8276b2",
+          "path": " ",
+          "url": "https://thumbs.dreamstime.com/b/time-management-clock-hustle-speed-working-icon-element-thin-line-website-design-development-app-premium-white-188780816.jpg",
+          "size": 0
+        }
+      ],
+      "timestamp": 1664664779595,
+      "frequency": 125,
+      "_description": "Over time"
+    },
+    {
+      "token": "e20387164043a011900950b867fc04a0de55a235",
+      "id": 1105757017611.5608,
+      "en_word": "Outrage",
+      "pt_br_word": "Indignação; revolta; afronta; escândalo",
+      "img_words": [
+        {
+          "id": 1162042595173.3232,
+          "token": "882c14cf6206be13638fbc95428e2f2e7796ef66",
+          "path": " ",
+          "url": "https://th.bing.com/th/id/OIP.HPZqvCHFAxrjknEX4jp_pAHaE7?pid=ImgDet&rs=1",
+          "size": 0
+        }
+      ],
+      "timestamp": 1664665041695,
+      "frequency": 125,
+      "_description": "Outrage",
+      "description": "no comments, insert a comment will help you !"
+    },
+    {
+      "token": "657df1049f0ca41a4bce0e398fd91ffe207cd2ed",
+      "id": 520282303472.01733,
+      "en_word": "Grape",
+      "pt_br_word": "Grape",
+      "img_words": [
+        {
+          "id": 1162042595173.3232,
+          "token": "882c14cf6206be13638fbc95428e2f2e7796ef66",
+          "path": " ",
+          "url": "https://is5-ssl.mzstatic.com/image/thumb/Y2QH5MLBXueCqAdgxqWUtA/2000x1125.jpg",
+          "size": 0
+        },
+        {
+          "id": 881806045563.5201,
+          "token": "2badb52de0fd2a9d2fe3b6cc4b6fe570ed592255",
+          "path": " ",
+          "url": "https://th.bing.com/th/id/OIP.HPZqvCHFAxrjknEX4jp_pAHaE7?pid=ImgDet&rs=1",
+          "size": 0
+        }
+      ],
+      "timestamp": 1664665168157,
+      "frequency": 125,
+      "_description": "Grape"
+    }
+  ]
+}
