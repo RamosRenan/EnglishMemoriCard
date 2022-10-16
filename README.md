@@ -23,5 +23,6 @@ https://www.figma.com/proto/xGREbIBJmI0RYmsxRHlVZL/Untitled?node-id=16%3A271&sta
 <li>Criar tela inicial da aplicação. </li>
 <li>Criar menu slider lateral .</li>
 <li>Criar validação para o formulário.</li>
+<li>Utilizar ferramenta de armazenamento json server para mantes as informações das palavras cadastradas.</li>
 <li>Build e deploy da aplicação.</li>
 </ol>
